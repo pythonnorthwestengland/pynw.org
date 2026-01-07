@@ -1,0 +1,1 @@
+A Python community user group based in Manchester, UK
