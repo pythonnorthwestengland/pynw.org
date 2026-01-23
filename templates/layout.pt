@@ -10,13 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/images/pythonnw.png" type="image/x-icon" />
+		<link rel="icon" href="/images/pythonnw.png" type="image/x-icon" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://pynw.org/pythonnw.jpg" />
+		<meta property="og:image" content="https://pynw.org/images/pythonnw.png" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@pythonnorthwest" />
-		<meta name="twitter:image" content="https://pynw.org/pythonnw.jpg" />
+		<meta name="twitter:image" content="https://pynw.org/images/pythonnw.png" />
 		<meta metal:define-slot="head" />
 	</head>
 	<body class="is-preload">
