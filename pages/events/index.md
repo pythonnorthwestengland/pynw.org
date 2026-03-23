@@ -4,10 +4,11 @@ miss out.
 
 ## Upcoming events
 
-- **Tues 17 March 2026** - Social at North Bar [tickets](https://pythonnwmar2026.eventbrite.com/)
+- TBC
 
 ## Past events
 
+- **Tues 17 March 2026** - Social at North Bar
 - **Tues 27 January 2026** - Social at North Bar
 
 ## Call for participation
