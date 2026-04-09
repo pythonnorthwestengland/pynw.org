@@ -8,6 +8,18 @@ static site generator called [beemo](https://github.com/bennuttall/beemo).
 This repo contains content, static files and
 [Chameleon](https://chameleon.readthedocs.io/en/latest/) templates for the website.
 
+## Build
+
+Requires [beemo](https://github.com/bennuttall/beemo) with the `logs` extra installed.
+
+```bash
+make build          # build the site
+make logs           # process Apache logs into CSV
+make analytics         # generate analytics report
+make serve          # serve the site locally on port 8011
+make serve-analytics   # serve the analytics report on port 8012
+```
+
 ## Licences
 
 Contents are Copyright Python North West. The HTML template is provide by [HTML5
