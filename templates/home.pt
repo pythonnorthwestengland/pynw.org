@@ -1,7 +1,7 @@
-<div metal:use-macro="layout">
+<main metal:use-macro="layout">
   <div metal:fill-slot="head" tal:omit-tag="1">
     <meta name="description" content="The homepage of the Python North West user group" />
-    <meta property="og:url" content="${site.config.base_url}/${page.link}" />
+    <meta property="og:url" content="${site.config.base_url}/" />
     <meta property="og:title" content="${page.title}" />
     <meta name="twitter:title" content="${page.title}" />
     <meta property="og:description" content="${page.description}" />
@@ -10,85 +10,77 @@
 
   <div metal:fill-slot="title" tal:omit-tag="1">Home</div>
 
-  <section metal:fill-slot="content">
-    <!-- Home -->
-        <article id="top" class="wrapper style1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12" style="text-align: center;">
-                        <img src="/images/pythonnw-full.png" alt="" />
-                        <header>
-                            <h1>Python North West</h1>
-                        </header>
-                        <div tal:content="structure page.html"></div>
-                        <a href="/events/" class="button large scrolly">Check out our events</a>
-                    </div>
-                </div>
-            </div>
-        </article>
+  <main metal:fill-slot="content" class="site-main">
+    <section class="hero">
+      <div class="container">
+        <img class="logo" src="/images/pythonnw-full.png" alt="Python North West" />
+        <h1>Python North West</h1>
+        <p class="tagline">${page.description}</p>
+        <a class="btn" href="/events/">Check out our events</a>
+      </div>
+    </section>
 
-    <!-- Work -->
-        <article id="work" class="wrapper style2">
-            <div class="container">
-                <header>
-                    <h2>What we do</h2>
-                    <p>What you can expect from <strong>Python North West</strong></p>
-                </header>
-                <div class="row aln-center">
-                    <div class="col-4 col-6-medium col-12-small">
-                        <section class="box style1">
-                            <span class="icon featured fa-comments"></span>
-                            <h3>Python community</h3>
-                            <p>Meet other Python enthusiasts, and engage with the Python community.</p>
-                        </section>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <section class="box style1">
-                            <span class="icon solid featured fa-laptop"></span>
-                            <h3>Talks and workshops</h3>
-                            <p>Join us for informative talks and hands-on workshops led by experienced Python developers.</p>
-                        </section>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <section class="box style1">
-                            <span class="icon featured fa-thumbs-up"></span>
-                            <h3>Socials</h3>
-                            <p>We organise social events too! Grab a slice of pizza or a beer with us.</p>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </article>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>What we do</h2>
+          <p>What you can expect from Python North West</p>
+        </div>
+        <div class="feature-grid">
+          <section class="feature">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3>Python community</h3>
+            <p>Meet other Python enthusiasts, and engage with the Python community.</p>
+          </section>
+          <section class="feature">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </span>
+            <h3>Talks and workshops</h3>
+            <p>Join us for informative talks and hands-on workshops led by experienced Python developers.</p>
+          </section>
+          <section class="feature">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </span>
+            <h3>Socials</h3>
+            <p>We organise social events too! Grab a slice of pizza or a beer with us.</p>
+          </section>
+        </div>
+      </div>
+    </section>
 
-		<!-- Portfolio -->
-        <article id="portfolio" class="wrapper style3">
-            <div class="container">
-                <header>
-                    <h2>Friends of Python North West</h2>
-                </header>
-                <div class="row">
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://2025.pyconuk.org/" class="image featured"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
-                            <h3><a href="https://2025.pyconuk.org/">PyCon UK</a></h3>
-                            <p>The UK's annual Python conference</p>
-                        </article>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://www.meetup.com/pydata-manchester/" class="image featured"><img src="/images/pydata-manchester.jpg" alt="" /></a>
-                            <h3><a href="https://www.meetup.com/pydata-manchester/">PyData Manchester</a></h3>
-                            <p>The Manchester chapter of the international PyData community</p>
-                        </article>
-                    </div>
-                    <div class="col-4 col-6-medium col-12-small">
-                        <article class="box style2">
-                            <a href="https://www.python.org/psf-landing/" class="image featured"><img src="/images/python.svg" alt="" /></a>
-                            <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
-                            <p>The charitable organisation behind the Python programming language</p>
-                        </article>
-                    </div>
+    <section class="section tint">
+      <div class="container">
+        <div class="section-head">
+          <h2>Friends of Python North West</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <a class="thumb" href="https://pyconuk.org/"><img src="/images/pyconuk-bee.jpg" alt="" /></a>
+            <div class="card-body">
+              <h3><a href="https://pyconuk.org/">PyCon UK</a></h3>
+              <p>The UK's annual Python conference</p>
             </div>
-        </article>
-  </section>
-</div>
+          </article>
+          <article class="card">
+            <a class="thumb" href="https://www.meetup.com/pydata-manchester/"><img src="/images/pydata-manchester.jpg" alt="" /></a>
+            <div class="card-body">
+              <h3><a href="https://www.meetup.com/pydata-manchester/">PyData Manchester</a></h3>
+              <p>The Manchester chapter of the international PyData community</p>
+            </div>
+          </article>
+          <article class="card">
+            <a class="thumb contain" href="https://www.python.org/psf-landing/"><img src="/images/python.svg" alt="" /></a>
+            <div class="card-body">
+              <h3><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></h3>
+              <p>The charitable organisation behind the Python programming language</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</main>
