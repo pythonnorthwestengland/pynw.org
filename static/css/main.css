@@ -5,7 +5,7 @@
    ========================================================================= */
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 
   --content-width: 1080px;
   --radius: 16px;
@@ -31,6 +31,7 @@
   --shadow: 0 6px 24px rgba(90, 71, 224, 0.12);
   --code-bg: #f3f1fb;
   --selection: #d9d3f8;
+  --nav-bg: rgba(255, 255, 255, 0.85);
 
   --syn-comment: #6a737d;
   --syn-keyword: #d73a49;
@@ -38,6 +39,70 @@
   --syn-number: #005cc5;
   --syn-func: #6f42c1;
   --syn-builtin: #005cc5;
+}
+
+/* Dark palette, applied when the visitor explicitly chooses dark. */
+:root[data-theme="dark"] {
+  --bg: #14131c;
+  --surface: #1c1a28;
+  --surface-2: #262236;
+  --text: #e9e7f2;
+  --muted: #a39fb5;
+  --border: #2e2a40;
+  --accent: #8b7bf0;
+  --accent-hover: #a194f4;
+  --accent-soft: rgba(139, 123, 240, 0.16);
+  --warm: #ff8a6b;
+  --warm-hover: #ff9d82;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  --code-bg: #1a1828;
+  --selection: rgba(139, 123, 240, 0.32);
+  --nav-bg: rgba(20, 19, 28, 0.85);
+
+  --syn-comment: #8b949e;
+  --syn-keyword: #ff7b72;
+  --syn-string: #a5d6ff;
+  --syn-number: #79c0ff;
+  --syn-func: #d2a8ff;
+  --syn-builtin: #79c0ff;
+}
+
+/* Auto mode: no explicit choice -> follow the OS preference. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #14131c;
+    --surface: #1c1a28;
+    --surface-2: #262236;
+    --text: #e9e7f2;
+    --muted: #a39fb5;
+    --border: #2e2a40;
+    --accent: #8b7bf0;
+    --accent-hover: #a194f4;
+    --accent-soft: rgba(139, 123, 240, 0.16);
+    --warm: #ff8a6b;
+    --warm-hover: #ff9d82;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+    --code-bg: #1a1828;
+    --selection: rgba(139, 123, 240, 0.32);
+    --nav-bg: rgba(20, 19, 28, 0.85);
+
+    --syn-comment: #8b949e;
+    --syn-keyword: #ff7b72;
+    --syn-string: #a5d6ff;
+    --syn-number: #79c0ff;
+    --syn-func: #d2a8ff;
+    --syn-builtin: #79c0ff;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 *,
@@ -119,7 +184,7 @@ h4 {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
@@ -166,6 +231,56 @@ h4 {
   background: var(--accent-soft);
   color: var(--accent);
   text-decoration: none;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  margin-left: 0.25rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* Show the icon for the theme you'd switch TO: moon while light, sun while dark. */
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .icon-sun {
+    display: block;
+  }
+  :root:not([data-theme]) .theme-toggle .icon-moon {
+    display: none;
+  }
 }
 
 /* -------------------------------------------------------------------------
@@ -219,7 +334,8 @@ h4 {
 }
 
 .hero img.logo {
-  width: 96px;
+  width: 500px;
+  max-width: 100%;
   height: auto;
   margin-bottom: 1.25rem;
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
