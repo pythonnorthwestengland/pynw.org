@@ -9,7 +9,8 @@ build:
 
 logs:
   logs_dir: apache2
-  pattern: "pynw.org-access*"
+  pattern: "pynw.org-access*gz"
+  live_pattern: "pynw.org-access*"
 
 analytics:
   output_dir: analytics
